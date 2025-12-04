@@ -1,0 +1,162 @@
+[
+    {
+        "name": "Live My Life",
+        "artist": "aespa",
+        "album": "Armageddon - The 1st Album",
+        "popularity": 56,
+        "duration_ms": 159133,
+        "release_date": "2024-05-27"
+    },
+    {
+        "name": "Savior Complex",
+        "artist": "Phoebe Bridgers",
+        "album": "Punisher",
+        "popularity": 66,
+        "duration_ms": 241640,
+        "release_date": "2020-06-18"
+    },
+    {
+        "name": "Happier Than Ever",
+        "artist": "Billie Eilish",
+        "album": "Happier Than Ever",
+        "popularity": 85,
+        "duration_ms": 298899,
+        "release_date": "2021-07-30"
+    },
+    {
+        "name": "Oceans & Engines",
+        "artist": "NIKI",
+        "album": "Nicole",
+        "popularity": 76,
+        "duration_ms": 336000,
+        "release_date": "2022-08-11"
+    },
+    {
+        "name": "lacy",
+        "artist": "Olivia Rodrigo",
+        "album": "GUTS",
+        "popularity": 82,
+        "duration_ms": 177212,
+        "release_date": "2023-09-08"
+    },
+    {
+        "name": "For Good - Live from the Gershwin Theatre",
+        "artist": "Cynthia Erivo, Ariana Grande, Idina Menzel, Kristin Chenoweth",
+        "album": "Wicked: One Wonderful Night (Live) \u2013 The Soundtrack",
+        "popularity": 73,
+        "duration_ms": 271695,
+        "release_date": "2025-11-07"
+    },
+    {
+        "name": "As Long As You\u2019re Mine",
+        "artist": "Cynthia Erivo, Jonathan Bailey",
+        "album": "Wicked: For Good \u2013 The Soundtrack",
+        "popularity": 79,
+        "duration_ms": 246573,
+        "release_date": "2025-11-21"
+    },
+    {
+        "name": "We're In Love",
+        "artist": "boygenius, Julien Baker, Phoebe Bridgers, Lucy Dacus",
+        "album": "the record",
+        "popularity": 54,
+        "duration_ms": 294626,
+        "release_date": "2023-03-31"
+    },
+    {
+        "name": "TV",
+        "artist": "Billie Eilish",
+        "album": "Guitar Songs",
+        "popularity": 84,
+        "duration_ms": 281380,
+        "release_date": "2022-07-21"
+    },
+    {
+        "name": "What It Sounds Like",
+        "artist": "HUNTR/X, EJAE, AUDREY NUNA, REI AMI, KPop Demon Hunters Cast",
+        "album": "KPop Demon Hunters (Soundtrack from the Netflix Film)",
+        "popularity": 91,
+        "duration_ms": 250268,
+        "release_date": "2025-06-20"
+    },
+    {
+        "name": "Gravity",
+        "artist": "Sara Bareilles",
+        "album": "Little Voice",
+        "popularity": 62,
+        "duration_ms": 233021,
+        "release_date": "2007-07-03"
+    },
+    {
+        "name": "Punisher",
+        "artist": "Phoebe Bridgers",
+        "album": "Punisher",
+        "popularity": 64,
+        "duration_ms": 189622,
+        "release_date": "2020-06-18"
+    },
+    {
+        "name": "Waiting Room",
+        "artist": "Phoebe Bridgers",
+        "album": "Lost Ark Studio Compilation, Vol. 8",
+        "popularity": 78,
+        "duration_ms": 393962,
+        "release_date": "2016-08-12"
+    },
+    {
+        "name": "Autumn",
+        "artist": "NIKI",
+        "album": "Nicole",
+        "popularity": 71,
+        "duration_ms": 232800,
+        "release_date": "2022-08-11"
+    },
+    {
+        "name": "Dear",
+        "artist": "QWER",
+        "album": "3rd Mini Album 'In a million noises, I'll be your harmony'",
+        "popularity": 55,
+        "duration_ms": 202026,
+        "release_date": "2025-06-09"
+    },
+    {
+        "name": "THE GREATEST",
+        "artist": "Billie Eilish",
+        "album": "HIT ME HARD AND SOFT",
+        "popularity": 82,
+        "duration_ms": 293840,
+        "release_date": "2024-05-17"
+    },
+    {
+        "name": "The Apartment We Won't Share",
+        "artist": "NIKI",
+        "album": "Nicole",
+        "popularity": 71,
+        "duration_ms": 149840,
+        "release_date": "2022-08-11"
+    },
+    {
+        "name": "The Wizard And I",
+        "artist": "Cynthia Erivo, Michelle Yeoh",
+        "album": "Wicked: The Soundtrack",
+        "popularity": 76,
+        "duration_ms": 336858,
+        "release_date": "2024-11-22"
+    },
+    {
+        "name": "ballad of a homeschooled girl",
+        "artist": "Olivia Rodrigo",
+        "album": "GUTS",
+        "popularity": 70,
+        "duration_ms": 203369,
+        "release_date": "2023-09-08"
+    },
+    {
+        "name": "What Was I Made For? [From The Motion Picture \"Barbie\"]",
+        "artist": "Billie Eilish",
+        "album": "What Was I Made For? [From The Motion Picture \"Barbie\"]",
+        "popularity": 85,
+        "duration_ms": 222369,
+        "release_date": "2023-07-13"
+    }
+]

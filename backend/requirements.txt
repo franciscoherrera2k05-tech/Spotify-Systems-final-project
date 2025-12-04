@@ -1,0 +1,7 @@
+spotipy
+pandas
+sqlalchemy
+python-dotenv
+psycopg2-binary
+flask
+flask-cors

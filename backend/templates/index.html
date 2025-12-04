@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify Weekly Top 20</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- TOP HEADER / LOGIN SCREEN -->
+        <section id="login-section" class="center-screen">
+            <h1 class="title">Want to see your<br>20 most popular songs this week?</h1>
+
+            <button id="login-btn" class="login-btn">
+                Sign in with Spotify
+            </button>
+        </section>
+
+        <!-- TRACKS SCREEN -->
+        <section id="tracks-section" style="display:none;">
+            <h2 class="tracks-title">Your Top 20 Songs This Week</h2>
+
+            <div id="track-list" class="track-grid"></div>
+        </section>
+
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
