@@ -16,52 +16,57 @@ app.secret_key = "replace_with_your_secret"
 CORS(app)
 
 auth_manager = SpotifyOAuth(
-   client_id=os.getenv("SPOTIPY_CLIENT_ID"),
-   client_secret=os.getenv("SPOTIPY_CLIENT_SECRET"),
-   redirect_uri=os.getenv("REDIRECT_URL"),
-   scope="user-top-read",
-   cache_path=".cache"
+    client_id=os.getenv("SPOTIPY_CLIENT_ID"),
+    client_secret=os.getenv("SPOTIPY_CLIENT_SECRET"),
+    redirect_uri=os.getenv("REDIRECT_URL"),
+    scope="user-top-read",
+    cache_path=".cache"
 )
+
+#Database engine using Render DATABASE_URL
+database_url = os.getenv("DATABASE_URL")
+if not database_url:
+    raise ValueError("DATABASE_URL not found in environment variables")
+engine = create_engine(database_url)
 
 @app.route("/")
 def home():
-   return render_template("index.html")
+    return render_template("index.html")
 
 @app.route("/login")
 def login():
-   auth_url = auth_manager.get_authorize_url()
-   return redirect(auth_url)
+    auth_url = auth_manager.get_authorize_url()
+    return redirect(auth_url)
 
 @app.route("/callback")
 def callback():
-   try:
-       code = request.args.get("code")
-       if not code:
-           return "No code in request", 400
+    try:
+        code = request.args.get("code")
+        if not code:
+            return "No code in request", 400
 
-       token_info = auth_manager.get_access_token(code, as_dict=True)
-       access_token = token_info["access_token"]
+        token_info = auth_manager.get_access_token(code, as_dict=True)
+        access_token = token_info["access_token"]
 
-       #run ETL using the required token
-       extract_tracks(access_token)
-       clean_data()
-       load_sql()
+        #run ETL using the required token
+        extract_tracks(access_token)
+        clean_data()
+        load_sql()
 
-       return redirect(url_for("home"))
+        return redirect(url_for("home"))
 
-   except Exception as e:
-       import traceback
-       traceback.print_exc()
-       return f"Internal Server Error: {str(e)}", 500
+    except Exception as e:
+        import traceback
+        traceback.print_exc()
+        return f"Internal Server Error: {str(e)}", 500
 
 @app.route("/tracks/sql")
 def get_sql_tracks():
-   db_user = os.getenv("POSTGRES_USER")
-   db_password = os.getenv("POSTGRES_PASSWORD")
-   db_name = os.getenv("POSTGRES_DB")
-   engine = create_engine(f"postgresql://{db_user}:{db_password}@postgres:5432/{db_name}")
-   df = pd.read_sql("SELECT * FROM tracks", engine)
-   return df.to_json(orient="records")
+    try:
+        df = pd.read_sql("SELECT * FROM tracks", engine)
+        return df.to_json(orient="records")
+    except Exception as e:
+        return {"error": str(e)}, 500
 
 if __name__ == "__main__":
-   app.run(host="0.0.0.0", port=5000)
+    app.run(host="0.0.0.0", port=5000)
