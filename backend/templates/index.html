@@ -1,33 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Spotify Weekly Top 20</title>
-    <link rel="stylesheet" href="/static/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Top 20 Songs</title>
+  <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
+  <div class="container">
 
-    <div class="container">
+    <header>
+      <h1>Your Top 20 Songs This Week</h1>
+      <p id="subtitle">Sign in to view your Spotify top tracks</p>
+    </header>
 
-        <!-- TOP HEADER / LOGIN SCREEN -->
-        <section id="login-section" class="center-screen">
-            <h1 class="title">Want to see your<br>20 most popular songs this week?</h1>
+    <!-- Login Button -->
+    <section id="login-section">
+      <button id="login-btn">Sign in with Spotify</button>
+    </section>
 
-            <button id="login-btn" class="login-btn">
-                Sign in with Spotify
-            </button>
-        </section>
+    <!-- Tracks List -->
+    <section id="tracks-section" style="display:none;">
+      <ul id="track-list"></ul>
+    </section>
 
-        <!-- TRACKS SCREEN -->
-        <section id="tracks-section" style="display:none;">
-            <h2 class="tracks-title">Your Top 20 Songs This Week</h2>
+  </div>
 
-            <div id="track-list" class="track-grid"></div>
-        </section>
+  <footer>
+    <p>&copy; 2025 Spotify Data Explorer</p>
+  </footer>
 
-    </div>
-
-    <script src="/static/script.js"></script>
+  <script src="/static/script.js"></script>
 </body>
 </html>

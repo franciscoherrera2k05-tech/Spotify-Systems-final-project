@@ -23,6 +23,12 @@ auth_manager = SpotifyOAuth(
     cache_path=".cache"
 )
 
+#Database engine using Render DATABASE_URL
+database_url = os.getenv("DATABASE_URL")
+if not database_url:
+    raise ValueError("DATABASE_URL not found in environment variables")
+engine = create_engine(database_url)
+
 @app.route("/")
 def home():
     return render_template("index.html")
@@ -56,12 +62,11 @@ def callback():
 
 @app.route("/tracks/sql")
 def get_sql_tracks():
-    db_user = os.getenv("POSTGRES_USER")
-    db_password = os.getenv("POSTGRES_PASSWORD")
-    db_name = os.getenv("POSTGRES_DB")
-    engine = create_engine(f"postgresql://{db_user}:{db_password}@postgres:5432/{db_name}")
-    df = pd.read_sql("SELECT * FROM tracks", engine)
-    return df.to_json(orient="records")
+    try:
+        df = pd.read_sql("SELECT * FROM tracks", engine)
+        return df.to_json(orient="records")
+    except Exception as e:
+        return {"error": str(e)}, 500
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)

@@ -8,11 +8,10 @@ def load_sql():
 
     df = pd.read_csv("clean_spotify.csv")
 
-    db_user = os.getenv("POSTGRES_USER")
-    db_password = os.getenv("POSTGRES_PASSWORD")
-    db_name = os.getenv("POSTGRES_DB", "spotifydb")
-
-    database_url = f"postgresql://{db_user}:{db_password}@postgres:5432/{db_name}"
+    # Use DATABASE_URL from environment
+    database_url = os.getenv("DATABASE_URL")
+    if not database_url:
+        raise ValueError("DATABASE_URL not found in environment variables")
 
     engine = create_engine(database_url)
 

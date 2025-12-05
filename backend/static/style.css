@@ -1,105 +1,82 @@
-/* Global */
 body {
     margin: 0;
-    padding: 0;
-    background: #121212;
-    font-family: "Inter", sans-serif;
-    color: #fff;
-}
-
-/* Container */
-.container {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 2rem;
-}
-
-/* Centered login screen */
-.center-screen {
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: #FFFFFF;
+  }
+  
+  .container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    height: 80vh;
+    padding: 2rem;
+  }
+  
+  header {
     text-align: center;
-}
-
-.title {
-    font-size: 2.4rem;
-    font-weight: 700;
-    margin-bottom: 2rem;
-    color: #1DB954;
-}
-
-/* Spotify login button */
-.login-btn {
-    background: #1DB954;
-    color: black;
-    padding: 1rem 2.5rem;
-    font-size: 1.2rem;
+    margin-bottom: 3rem;
+  }
+  
+  #subtitle {
+    color: #B3B3B3;
+  }
+  
+  #login-btn {
+    background-color: #1DB954;
+    color: white;
     border: none;
+    padding: 1rem 2rem;
     border-radius: 50px;
-    cursor: pointer;
+    font-size: 1.2rem;
     font-weight: bold;
-    transition: 0.2s;
-}
-
-.login-btn:hover {
-    background: #1ed760;
-    transform: translateY(-2px);
-}
-
-/* Tracks section */
-.tracks-title {
-    text-align: center;
-    font-size: 2rem;
-    margin-bottom: 2rem;
-    color: #1DB954;
-}
-
-/* Track grid */
-.track-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: 1.5rem;
-}
-
-/* Track Card */
-.track-card {
-    background: #181818;
-    padding: 1.5rem;
-    border-radius: 14px;
-    box-shadow: 0 0 25px rgba(0,0,0,0.35);
+    cursor: pointer;
+  }
+  
+  #login-btn:hover {
+    background-color: #1ed760;
+  }
+  
+  #tracks-section {
+    width: 100%;
+    max-width: 800px;
+    margin-top: 2rem;
+  }
+  
+  .track-card {
     display: flex;
     justify-content: space-between;
-    transition: 0.2s;
-}
-
-.track-card:hover {
-    transform: translateY(-4px);
-    background: #1e1e1e;
-}
-
-.track-left h3 {
-    margin-top: 0;
-    margin-bottom: 0.4rem;
+    flex-wrap: wrap;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background-color: #1E1E1E;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    transition: transform 0.15s;
+  }
+  
+  .track-card:hover {
+    transform: translateY(-3px);
+  }
+  
+  .track-info h3 {
+    margin-bottom: 0.5rem;
     color: #1DB954;
-    font-size: 1.2rem;
-}
-
-.artist {
-    font-weight: bold;
-    color: #ddd;
-}
-
-.album, .track-right p {
-    color: #aaa;
-}
-
-/* Mobile */
-@media (max-width: 600px) {
-    .track-card {
-        flex-direction: column;
-        gap: 1rem;
+  }
+  
+  .track-info p,
+  .track-meta p {
+    margin-bottom: 0.3rem;
+    color: #B3B3B3;
+  }
+  
+  .track-meta {
+    text-align: right;
+  }
+  
+  @media (max-width: 600px) {
+    .track-meta {
+      text-align: left;
+      margin-top: 0.5rem;
     }
-}
+  }
+  
