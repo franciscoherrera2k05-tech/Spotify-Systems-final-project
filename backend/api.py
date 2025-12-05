@@ -33,6 +33,16 @@ engine = create_engine(database_url)
 def home():
     return render_template("index.html")
 
+@app.route("/health")
+def healthcheck():
+    try:
+        # Optional: check database connection
+        with engine.connect() as conn:
+            conn.execute("SELECT 1")
+        return {"status": "ok"}, 200
+    except Exception as e:
+        return {"status": "error", "message": str(e)}, 500
+
 @app.route("/login")
 def login():
     auth_url = auth_manager.get_authorize_url()
@@ -62,11 +72,8 @@ def callback():
 
 @app.route("/tracks/sql")
 def get_sql_tracks():
-    try:
-        df = pd.read_sql("SELECT * FROM tracks", engine)
-        return df.to_json(orient="records")
-    except Exception as e:
-        return {"error": str(e)}, 500
+    df = pd.read_sql("SELECT * FROM tracks", engine)
+    return jsonify(df.to_dict(orient="records"))
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)

@@ -8,12 +8,15 @@ def load_sql():
 
     df = pd.read_csv("clean_spotify.csv")
 
-    # Use DATABASE_URL from environment
     database_url = os.getenv("DATABASE_URL")
     if not database_url:
         raise ValueError("DATABASE_URL not found in environment variables")
 
     engine = create_engine(database_url)
+
+    # Ensure 'id' is the primary key and exists
+    if "id" not in df.columns:
+        raise Exception("Missing 'id' column in clean_spotify.csv")
 
     df.to_sql("tracks", engine, if_exists="replace", index=False)
     print("Loaded into PostgreSQL.")
