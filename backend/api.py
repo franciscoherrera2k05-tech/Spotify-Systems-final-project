@@ -72,8 +72,11 @@ def callback():
 
 @app.route("/tracks/sql")
 def get_sql_tracks():
-    df = pd.read_sql("SELECT * FROM tracks", engine)
-    return jsonify(df.to_dict(orient="records"))
+    try:
+        df = pd.read_sql("SELECT * FROM tracks", engine)
+        return df.to_json(orient="records")
+    except Exception as e:
+        return {"error": str(e)}, 500
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
